@@ -13,7 +13,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux'
 import store from './src/store'
 
-import UserProfile from './src/components/UserProfile'
+import UserProfileContainer from './src/containers/UserProfileContainer'
 import TodoForm from './src/components/TodoForm';
 import TodoList from './src/components/TodoList';
 
@@ -23,7 +23,7 @@ export default class App extends Component<Props> {
     return (
       <Provider store={store}>
         <View style={{ flex: 10 }}>
-          <UserProfile />
+          <UserProfileContainer />
           <TodoForm />
           <TodoList />
         </View>
