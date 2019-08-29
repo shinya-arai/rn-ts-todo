@@ -1,10 +1,33 @@
 import * as React from 'react'
 import { View, Text, Button, StyleSheet } from 'react-native'
 
-const Counter = () => {
+export interface CounterProps {
+  count?: number,
+  addCount?: () => void,
+  decCount?: () => void,
+  resetCount?: () => void
+}
+
+const Counter: React.SFC<CounterProps>  = (props: CounterProps) => {
+  const { count, addCount, decCount, resetCount } = props
+
   return (
     <View style={styles.container}>
-      <Text style={styles.countText}>0</Text>
+      <Text style={styles.countText}>{count}</Text>
+      <View style={styles.buttons}>
+        <Button
+          title="increment"
+          onPress={() => addCount && addCount()}
+        />
+        <Button
+          title="decrement"
+          onPress={() => decCount && decCount()}
+        />
+        <Button
+          title="reset"
+          onPress={() => resetCount && resetCount()}
+        />
+      </View>
     </View>
   )
 }

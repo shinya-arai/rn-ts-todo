@@ -13,12 +13,11 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux'
 import store from './src/store'
 
-import Counter from './src/components/Counter'
+import Counter from './src/containers/Counter'
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    console.log(store.getState())
     return (
       <Provider store={store}>
         <View style={styles.container}>
