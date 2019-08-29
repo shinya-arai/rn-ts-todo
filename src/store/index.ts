@@ -1,12 +1,12 @@
 import { createStore, combineReducers } from 'redux'
-import counterReducer, { CounterState } from '../reducers/counterReducer'
+import usersReducer, { UsersState } from '../reducers/usersReducer'
 
 export interface AppState {
-  counterState: CounterState
+  usersState: UsersState
 }
 
 const rootReducer = combineReducers<AppState>({
-  counterState: counterReducer
+  usersState: usersReducer
 })
 
 const store = createStore(rootReducer)
