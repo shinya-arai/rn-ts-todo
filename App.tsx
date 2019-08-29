@@ -13,36 +13,21 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux'
 import store from './src/store'
 
-import Counter from './src/containers/Counter'
+import UserProfile from './src/components/UserProfile'
+import TodoForm from './src/components/TodoForm';
+import TodoList from './src/components/TodoList';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <Counter />
+        <View style={{ flex: 10 }}>
+          <UserProfile />
+          <TodoForm />
+          <TodoList />
         </View>
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
