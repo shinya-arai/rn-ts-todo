@@ -10,15 +10,21 @@ import React from 'react';
 import { Component } from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
+import { Provider } from 'react-redux'
+import store from './src/store'
+
 import Counter from './src/components/Counter'
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    console.log(store.getState())
     return (
-      <View style={styles.container}>
-        <Counter />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Counter />
+        </View>
+      </Provider>
     );
   }
 }
