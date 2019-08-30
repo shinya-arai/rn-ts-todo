@@ -14,8 +14,8 @@ import { Provider } from 'react-redux'
 import store from './src/store'
 
 import UserProfileContainer from './src/containers/UserProfileContainer'
-import TodoForm from './src/components/TodoForm';
-import TodoList from './src/components/TodoList';
+import TodoFormContainer from './src/containers/TodoFormContainer';
+import TodoListContainer from './src/containers/TodoListContainer';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -24,8 +24,8 @@ export default class App extends Component<Props> {
       <Provider store={store}>
         <View style={{ flex: 10 }}>
           <UserProfileContainer />
-          <TodoForm />
-          <TodoList />
+          <TodoFormContainer />
+          <TodoListContainer />
         </View>
       </Provider>
     );
