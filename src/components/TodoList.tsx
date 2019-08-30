@@ -1,17 +1,35 @@
 import * as React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, FlatList } from 'react-native'
+import { Post } from '../reducers/postsReducer';
 
-const TodoList = () => {
+export interface Props {
+  posts: null | Post[]
+}
+
+const TodoList = (props: Props) => {
+  const { posts } = props
   return (
     <View style={styles.container}>
-      <Text>TodoList</Text>
+      <ScrollView>
+        <FlatList
+          data={posts}
+          renderItem={({item}) => {
+            return (
+              <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', flexDirection: 'row' }}>
+              <Text>{item.text}</Text>
+              <Text>{item.name}</Text>
+            </View>
+            )
+          }}
+        />
+      </ScrollView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 6,
+    flex: 6
   },
 })
 

@@ -32,7 +32,7 @@ class TodoForm extends React.Component<Props, State> {
           title="投稿する"
           onPress={() => {
             addPost(text)
-            console.log(store.getState())
+            this.setState({ text: '' })
           }}
         />
       </View>

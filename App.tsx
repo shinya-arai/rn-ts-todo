@@ -15,18 +15,17 @@ import store from './src/store'
 
 import UserProfileContainer from './src/containers/UserProfileContainer'
 import TodoFormContainer from './src/containers/TodoFormContainer';
-import TodoList from './src/components/TodoList';
+import TodoListContainer from './src/containers/TodoListContainer';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    console.log(store.getState())
     return (
       <Provider store={store}>
         <View style={{ flex: 10 }}>
           <UserProfileContainer />
           <TodoFormContainer />
-          <TodoList />
+          <TodoListContainer />
         </View>
       </Provider>
     );
