@@ -37,7 +37,7 @@ class UserProfile extends React.Component<Props, {}> {
         </View>
         <View style={{ flex: 0.1, flexDirection: 'row' }}>
           <Text>名前: {currentUser ? currentUser.name : 'null'}</Text>
-          <Text style={{ marginLeft: 10 }}>投稿数: {currentUser ? currentUser.count : 'null'}</Text>
+          {/* <Text style={{ marginLeft: 10 }}>投稿数: {currentUser ? currentUser.count : 'null'}</Text> */}
         </View>
       </View>
      )
